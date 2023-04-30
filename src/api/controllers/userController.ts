@@ -15,7 +15,7 @@ class UserController {
             if(!email || !password){
                 return res.status(400).json(
                     {
-                        status: false,
+                        auth: false,
                         message: "email or password is missing!"
                     }
                 );
@@ -41,9 +41,8 @@ class UserController {
             console.log(error);
             return res.status(500).json(
                 {
-                    status: false,
+                    auth: false,
                     message: "Technical Server Error!",
-                    error: error
                 }
             );
         }
