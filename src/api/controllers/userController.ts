@@ -62,7 +62,7 @@ class UserController {
         const userExists = await User.findOne({ email: email });
         if (userExists) {
             return res.status(400)
-                .json({ status: false, msg: "Email already exist!" });
+                .json({ status: false, message: "Email already exist!" });
         }
 
         var encryptedPassword = aes.encrypt(password, properties.AES_SECRET).toString(); // hash password
@@ -80,7 +80,6 @@ class UserController {
             return res.status(500).json({
                 status: false,
                 message: "Technical Server Error!",
-                error: error
             });
         }
     };
