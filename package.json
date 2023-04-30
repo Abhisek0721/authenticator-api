@@ -2,6 +2,7 @@
   "name": "authenticatior",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "server.ts",
   "scripts": {
     "start": "node server.ts",
