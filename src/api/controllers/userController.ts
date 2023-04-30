@@ -28,14 +28,14 @@ class UserController {
                 decryptedPassword = decryptedPassword.toString(CryptoJS.enc.Utf8);
                 if(decryptedPassword === password){
                     const token = getSignedJwtToken(user._id);
-                    return res.json({ auth: true, token: token, msg: "Log in succussfully!" });
+                    return res.json({ auth: true, token: token, message: "Log in succussfully!" });
                 }else{
                     return res.status(400)
-                        .json({ auth: false, msg: "Wrong Password!" });
+                        .json({ auth: false, message: "Wrong Password!" });
                 }
             }else{
                 return res.status(400)
-                    .json({ auth: false, msg: "Email doesn't exist!" });
+                    .json({ auth: false, message: "Email doesn't exist!" });
             }
         } catch (error) {
             console.log(error);
